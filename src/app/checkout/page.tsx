@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Checkout() {
   const { cart, getCartTotal, clearCart } = useCart();
-  const whatsappNumber = '254736317583';
+  const whatsappNumber = '0740272542';
 
   const [formData, setFormData] = useState({
     name: '',

@@ -98,8 +98,8 @@ export default function FAQ() {
                 setOpenIndex(null);
               }}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${selectedCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-blue-600 text-white shadow-lg'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
             >
               {category === 'all' ? 'All Questions' : category}
@@ -165,7 +165,7 @@ export default function FAQ() {
             Our team is here to help you find the perfect water storage solution
           </p>
           <a
-            href="https://wa.me/254736317583"
+            href="https://wa.me/0740272542"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-colors"

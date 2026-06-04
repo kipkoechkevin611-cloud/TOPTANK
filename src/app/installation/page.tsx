@@ -358,7 +358,7 @@ export default function Installation() {
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Important Notice</h3>
               <p className="text-gray-700">
-                TopTank Kenya provides installation guidelines for reference. For professional installation services, 
+                TopTank Kenya provides installation guidelines for reference. For professional installation services,
                 contact our certified installation team. Warranty may be voided if installation does not meet these guidelines.
               </p>
             </div>
@@ -382,7 +382,7 @@ export default function Installation() {
               Our certified installation team ensures proper setup for optimal performance
             </p>
             <a
-              href="https://wa.me/254736317583"
+              href="https://wa.me/0740272542"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300"

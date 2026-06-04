@@ -110,8 +110,8 @@ export default function Technology() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 onClick={() => setActiveSection(index)}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${activeSection === index
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
               >
                 {tech.title}
@@ -520,7 +520,7 @@ export default function Technology() {
               Contact us to learn more about our advanced water storage solutions
             </p>
             <a
-              href="https://wa.me/254736317583"
+              href="https://wa.me/0740272542"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300"
