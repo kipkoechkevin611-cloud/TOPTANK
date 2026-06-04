@@ -41,7 +41,6 @@ export default function ProductCard({
       capacity,
       price,
       image,
-      quantity,
     });
   };
 

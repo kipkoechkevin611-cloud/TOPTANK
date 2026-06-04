@@ -82,7 +82,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       capacity: product.capacity,
       price: product.price,
       image: product.images[0],
-      quantity,
     });
   };
 
@@ -217,8 +216,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
                 className={`flex-1 py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${product.inStock
-                    ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl'
-                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   }`}
               >
                 {product.inStock ? 'Add to Cart' : 'Out of Stock'}

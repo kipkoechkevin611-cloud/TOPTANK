@@ -12,7 +12,7 @@ export default function Cart() {
     let message = 'ORDER INQUIRY\n\n';
 
     cart.forEach((item, index) => {
-      message += `${index + 1}. ${item.name} (${item.capacity} ${item.capacityUnit}) - Qty: ${item.quantity}\n`;
+      message += `${index + 1}. ${item.name} (${item.capacity}) - Qty: ${item.quantity}\n`;
     });
 
     message += `\nTotal Items: ${cart.reduce((total, item) => total + item.quantity, 0)}`;
@@ -81,8 +81,8 @@ export default function Cart() {
                     </div>
                     <div className="flex-grow">
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.name}</h3>
-                      <p className="text-gray-600 text-sm mb-2">{item.capacity} {item.capacityUnit}</p>
-                      <p className="text-blue-600 font-semibold">{item.priceRange}</p>
+                      <p className="text-gray-600 text-sm mb-2">{item.capacity}</p>
+                      <p className="text-blue-600 font-semibold">{item.price}</p>
                     </div>
                     <div className="flex flex-col items-end gap-2">
                       <button
