@@ -165,7 +165,7 @@ export default function FAQ() {
             Our team is here to help you find the perfect water storage solution
           </p>
           <a
-            href="https://wa.me/0740272542"
+            href="https://wa.me/254740272542"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-colors"

@@ -42,7 +42,7 @@ export default function Products() {
     { id: 'bin-nestable', name: 'Nestable Industrial Bin', capacity: '100L', dimensions: '50cm x 45cm', price: 'KSh 3,800', image: '/nestable.jpeg', inStock: true, deliveryAvailable: true, category: 'Bins' },
   ];
 
-  const whatsappNumber = '0740272542';
+  const whatsappNumber = '254740272542';
 
   return (
     <div className="flex flex-col">

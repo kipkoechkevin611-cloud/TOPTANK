@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Checkout() {
   const { cart, getCartTotal, clearCart } = useCart();
-  const whatsappNumber = '0740272542';
+  const whatsappNumber = '254740272542';
 
   const [formData, setFormData] = useState({
     name: '',
@@ -43,14 +43,39 @@ export default function Checkout() {
 
     const orderItems = cart.map((item, index) => {
       const priceValue = parseInt(item.price.replace(/[^0-9]/g, '')) || 0;
-      return `${index + 1}. ${item.name} (${item.capacity}) × ${item.quantity} — KSh ${(priceValue * item.quantity).toLocaleString()}`;
+      return `${index + 1}. ${item.name} (${item.capacity}) - Qty: ${item.quantity} - KSh ${(priceValue * item.quantity).toLocaleString()}`;
     }).join('\n');
 
-    const message = encodeURIComponent(
-      `Hello TopTank Kenya,\n\nI would like to place an order for:\n\n${orderItems}\n\n--- CUSTOMER DETAILS ---\n\nCustomer Name: ${formData.name}\nPhone Number: ${formData.phone}\nEmail: ${formData.email}\nDelivery Location: ${formData.deliveryLocation}\nDelivery Instructions: ${formData.deliveryInstructions}\nAdditional Notes: ${formData.notes}\n\n--- ORDER SUMMARY ---\n\nSubtotal: KSh ${getCartTotal().toLocaleString()}\nDelivery Fee: FREE (Countrywide Delivery)\nTotal Amount: KSh ${getCartTotal().toLocaleString()}\n\n✅ FREE DELIVERY COUNTRYWIDE\n\nPlease assist with payment and delivery process.`
-    );
+    const message = `*NEW ORDER - TOPTANK KENYA*
 
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+*ORDER DETAILS:*
+${orderItems}
+
+---
+*CUSTOMER INFORMATION:*
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+
+*DELIVERY DETAILS:*
+Location: ${formData.deliveryLocation}
+Instructions: ${formData.deliveryInstructions || 'None'}
+
+*ADDITIONAL NOTES:*
+${formData.notes || 'None'}
+
+---
+*ORDER SUMMARY:*
+Subtotal: KSh ${getCartTotal().toLocaleString()}
+Delivery: FREE (Countrywide)
+TOTAL: KSh ${getCartTotal().toLocaleString()}
+
+✅ FREE DELIVERY COUNTRYWIDE
+
+Please confirm my order and assist with payment.`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
     clearCart();
   };
 

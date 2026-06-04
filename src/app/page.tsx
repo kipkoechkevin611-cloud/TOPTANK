@@ -7,7 +7,7 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 
 export default function Home() {
-  const phoneNumber = '0740272542';
+  const phoneNumber = '254740272542';
   const message = encodeURIComponent('Hello TopTank Kenya, I would like to inquire about your water tanks.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
