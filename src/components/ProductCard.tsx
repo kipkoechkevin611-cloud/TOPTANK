@@ -32,7 +32,7 @@ export default function ProductCard({
   const [showQuickView, setShowQuickView] = useState(false);
   const { addToCart } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
-  const whatsappNumber = '254740272542';
+  const whatsappNumber = '254736317583';
 
   const handleAddToCart = () => {
     addToCart({

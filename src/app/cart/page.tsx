@@ -8,7 +8,7 @@ export default function Cart() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
 
   const handleWhatsAppCheckout = () => {
-    const whatsappNumber = '254740272542';
+    const whatsappNumber = '254736317583';
     let message = 'ORDER INQUIRY\n\n';
 
     cart.forEach((item, index) => {

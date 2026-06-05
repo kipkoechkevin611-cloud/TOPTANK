@@ -9,7 +9,7 @@ import { useCart } from '@/contexts/CartContext';
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
-  const whatsappNumber = '254740272542';
+  const whatsappNumber = '254736317583';
 
   // Mock product data - in production, this would come from MongoDB
   const product = {

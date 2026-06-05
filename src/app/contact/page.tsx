@@ -15,7 +15,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappNumber = '254740272542';
+    const whatsappNumber = '254736317583';
     const message = encodeURIComponent(
       `CONTACT INQUIRY\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
     );
@@ -58,9 +58,9 @@ export default function Contact() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone / WhatsApp</h3>
-              <p className="text-gray-600 mb-4">0740272542</p>
+              <p className="text-gray-600 mb-4">0736317583</p>
               <a
-                href="https://wa.me/254740272542"
+                href="https://wa.me/254736317583"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 text-sm"
@@ -484,7 +484,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/254740272542"
+                href="https://wa.me/254736317583"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2"

@@ -520,7 +520,7 @@ export default function Technology() {
               Contact us to learn more about our advanced water storage solutions
             </p>
             <a
-              href="https://wa.me/254740272542"
+              href="https://wa.me/254736317583"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300"

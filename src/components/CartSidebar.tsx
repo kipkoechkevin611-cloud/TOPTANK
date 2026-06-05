@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function CartSidebar() {
   const { cart, isOpen, setIsOpen, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
-  const whatsappNumber = '254740272542';
+  const whatsappNumber = '254736317583';
 
   const [formData, setFormData] = useState({
     name: '',

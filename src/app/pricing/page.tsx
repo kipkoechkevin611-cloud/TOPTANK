@@ -16,7 +16,7 @@ export default function Pricing() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappNumber = '254740272542';
+    const whatsappNumber = '254736317583';
     const message = encodeURIComponent(
       `PRICING INQUIRY\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nProduct: ${formData.product}\nCapacity: ${formData.capacity}\nQuantity: ${formData.quantity}\nMessage: ${formData.message}`
     );
@@ -343,7 +343,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href="https://wa.me/254740272542"
+                href="https://wa.me/254736317583"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300"
@@ -384,7 +384,7 @@ export default function Pricing() {
                   </select>
                 </div>
                 <a
-                  href="https://wa.me/254740272542"
+                  href="https://wa.me/254736317583"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 text-center"
