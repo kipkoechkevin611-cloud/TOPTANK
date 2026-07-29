@@ -34,5 +34,7 @@ Please assist with payment and delivery.
 
 export function openWhatsAppOrder(phoneNumber: string, data: WhatsAppOrderData): void {
   const message = generateWhatsAppOrderMessage(data);
-  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  // Format phone number to ensure it has country code
+  const formattedNumber = phoneNumber.startsWith('+') ? phoneNumber.substring(1) : phoneNumber;
+  window.open(`https://wa.me/${formattedNumber}?text=${message}`, '_blank');
 }

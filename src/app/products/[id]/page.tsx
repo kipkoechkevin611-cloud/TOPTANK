@@ -12,7 +12,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const [quantity, setQuantity] = useState(1);
   const [isWhatsAppFormOpen, setIsWhatsAppFormOpen] = useState(false);
   const { addToCart } = useCart();
-  const whatsappNumber = '254739447779';
+  const whatsappNumber = '0739447779';
 
   // Mock product data - in production, this would come from MongoDB
   const product = {
