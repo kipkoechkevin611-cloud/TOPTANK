@@ -42,6 +42,7 @@ export interface WhatsAppOrderData {
   email?: string;
   county?: string;
   town?: string;
+  deliveryLocation?: string;
   productName: string;
   capacity: string;
   price: string;

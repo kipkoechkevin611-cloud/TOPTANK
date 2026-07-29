@@ -6,9 +6,10 @@ NEW ORDER
 
 Customer Name: ${data.customerName || 'To be provided'}
 Phone Number: ${data.phoneNumber || 'To be provided'}
-Email: ${data.email || 'To be provided'}
+Email: ${data.email || 'Not provided'}
 County: ${data.county || 'To be provided'}
 Town: ${data.town || 'To be provided'}
+Delivery Location: ${data.deliveryLocation || 'To be provided'}
 
 Product Name: ${data.productName}
 Capacity: ${data.capacity}
@@ -16,7 +17,13 @@ Price: ${data.price}
 Quantity: ${data.quantity}
 Total: ${data.price} x ${data.quantity}
 
-Preferred Delivery Date: ${data.preferredDeliveryDate || 'To be discussed'}
+Date: ${new Date().toLocaleDateString('en-KE', { 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit'
+ })}
 Additional Notes: ${data.additionalNotes || 'None'}
 
 Please assist with payment and delivery.

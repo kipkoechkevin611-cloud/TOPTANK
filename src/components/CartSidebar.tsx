@@ -148,16 +148,16 @@ export default function CartSidebar() {
                         <div className="flex items-center gap-2 bg-white rounded-lg p-1 shadow-sm">
                           <button
                             onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
-                            className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md transition-colors"
+                            className="w-8 h-8 flex items-center justify-center text-black hover:bg-gray-100 rounded-md transition-colors"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
                             </svg>
                           </button>
-                          <span className="w-8 text-center font-semibold text-gray-900">{item.quantity}</span>
+                          <span className="w-8 text-center font-semibold text-black">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md transition-colors"
+                            className="w-8 h-8 flex items-center justify-center text-black hover:bg-gray-100 rounded-md transition-colors"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -226,7 +226,7 @@ export default function CartSidebar() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm text-black bg-white"
                         placeholder="John Doe"
                       />
                     </div>
@@ -240,7 +240,7 @@ export default function CartSidebar() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm text-black bg-white"
                         placeholder="07XXXXXXXXX"
                       />
                     </div>
@@ -254,7 +254,7 @@ export default function CartSidebar() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm text-black bg-white"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -268,7 +268,7 @@ export default function CartSidebar() {
                         required
                         value={formData.deliveryLocation}
                         onChange={(e) => setFormData({ ...formData, deliveryLocation: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm text-black bg-white"
                         placeholder="Enter your full delivery address"
                       />
                     </div>
@@ -281,7 +281,7 @@ export default function CartSidebar() {
                         rows={2}
                         value={formData.deliveryInstructions}
                         onChange={(e) => setFormData({ ...formData, deliveryInstructions: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm text-black bg-white"
                         placeholder="Any specific delivery instructions"
                       />
                     </div>

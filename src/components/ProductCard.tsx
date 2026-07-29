@@ -232,7 +232,7 @@ export default function ProductCard({
                         min="1"
                         value={quantity}
                         onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-                        className="w-20 px-4 py-2 border border-gray-300 rounded-lg text-center"
+                        className="w-20 px-4 py-2 border border-gray-300 rounded-lg text-center text-black bg-white"
                       />
                       <span className="text-gray-600">Quantity</span>
                     </div>

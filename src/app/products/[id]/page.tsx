@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import ProductGallery from '@/components/ProductGallery';
+import WhatsAppOrderForm from '@/components/WhatsAppOrderForm';
 import { useCart } from '@/contexts/CartContext';
 import { openWhatsAppOrder } from '@/lib/whatsapp';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const [quantity, setQuantity] = useState(1);
+  const [isWhatsAppFormOpen, setIsWhatsAppFormOpen] = useState(false);
   const { addToCart } = useCart();
   const whatsappNumber = '254739447779';
 
@@ -117,11 +119,22 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   };
 
   const handleWhatsAppOrder = () => {
+    setIsWhatsAppFormOpen(true);
+  };
+
+  const handleWhatsAppFormSubmit = (customerData: any) => {
     openWhatsAppOrder(whatsappNumber, {
+      customerName: customerData.fullName,
+      phoneNumber: customerData.phoneNumber,
+      email: customerData.email,
+      county: customerData.county,
+      town: customerData.town,
+      deliveryLocation: customerData.deliveryLocation,
       productName: product.name,
       capacity: product.capacity,
       price: product.price,
       quantity: quantity,
+      additionalNotes: customerData.additionalNotes,
     });
   };
 
@@ -163,10 +176,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
 
             <div className="mb-6">
-              <p className="text-4xl font-bold text-blue-600">{product.price}</p>
+              <p className="text-3xl font-bold text-blue-600">{product.price}</p>
             </div>
 
             <div className="space-y-3 mb-6">
@@ -220,7 +233,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors"
                   aria-label="Decrease quantity"
                 >
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
                   </svg>
                 </button>
@@ -229,14 +242,14 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   value={quantity}
                   onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
                   min="1"
-                  className="w-20 h-12 text-center text-xl font-semibold border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="w-20 h-12 text-center text-xl font-semibold border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black bg-white"
                 />
                 <button
                   onClick={() => setQuantity(quantity + 1)}
                   className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors"
                   aria-label="Increase quantity"
                 >
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
                 </button>
@@ -295,7 +308,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           transition={{ delay: 0.2, duration: 0.8 }}
           className="bg-white rounded-2xl shadow-lg p-8 mb-8"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Technical Specifications</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Technical Specifications</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {product.specifications.map((spec, index) => (
               <div key={index} className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
@@ -314,7 +327,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           transition={{ delay: 0.3, duration: 0.8 }}
           className="bg-white rounded-2xl shadow-lg p-8 mb-8"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Key Features</h2>
           <ul className="space-y-3">
             {product.features.map((feature, index) => (
               <li key={index} className="flex items-start gap-3">
@@ -335,7 +348,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           transition={{ delay: 0.4, duration: 0.8 }}
           className="bg-blue-50 rounded-2xl p-8 mb-8"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Installation Recommendations</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Installation Recommendations</h2>
           <ul className="space-y-3">
             {product.installation.map((item, index) => (
               <li key={index} className="flex items-start gap-3">
@@ -356,7 +369,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           transition={{ delay: 0.5, duration: 0.8 }}
           className="bg-green-50 rounded-2xl p-8 mb-8"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Delivery Information</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Delivery Information</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -414,7 +427,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           transition={{ delay: 0.6, duration: 0.8 }}
           className="bg-white rounded-2xl shadow-lg p-8 mb-8"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {product.faq.map((item, index) => (
               <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
@@ -441,7 +454,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Products</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Related Products</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {relatedProducts.map((relatedProduct) => (
               <Link
@@ -466,6 +479,18 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           </div>
         </motion.div>
       </div>
+
+      <WhatsAppOrderForm
+        isOpen={isWhatsAppFormOpen}
+        onClose={() => setIsWhatsAppFormOpen(false)}
+        onSubmit={handleWhatsAppFormSubmit}
+        orderDetails={{
+          productName: product.name,
+          capacity: product.capacity,
+          price: product.price,
+          quantity: quantity,
+        }}
+      />
     </div>
   );
 }
