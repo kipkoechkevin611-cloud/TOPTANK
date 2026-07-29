@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CartSidebar from "@/components/CartSidebar";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import { CartProvider } from "@/contexts/CartContext";
 import { WishlistProvider } from "@/contexts/WishlistContext";
 import { ToastProvider } from "@/components/Toast";
@@ -72,6 +73,7 @@ export default function RootLayout({
               <Footer />
               <WhatsAppButton />
               <CartSidebar />
+              <MobileBottomNav />
             </ToastProvider>
           </WishlistProvider>
         </CartProvider>

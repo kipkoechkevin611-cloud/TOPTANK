@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 export default function WhatsAppButton() {
-  const phoneNumber = '254736317583';
+  const phoneNumber = '254739447779';
   const message = encodeURIComponent('Hello TopTank Kenya, I would like to inquire about your water tanks.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

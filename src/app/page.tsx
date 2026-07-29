@@ -2,12 +2,19 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useMemo } from 'react';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import ProductCard from '@/components/ProductCard';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import QuoteRequest from '@/components/QuoteRequest';
+import CustomerReviews from '@/components/CustomerReviews';
+import DeliveryCoverage from '@/components/DeliveryCoverage';
+import Gallery from '@/components/Gallery';
 
 export default function Home() {
-  const phoneNumber = '254736317583';
+  const phoneNumber = '254739447779';
   const message = encodeURIComponent('Hello TopTank Kenya, I would like to inquire about your water tanks.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
@@ -21,15 +28,35 @@ export default function Home() {
     })), []
   );
 
+  const featuredProducts = [
+    { id: 'cyl-1000', name: 'Standard Cylindrical Tank', capacity: '1,000L', dimensions: '101cm x 130cm', price: 'KSh 8,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-2000', name: 'Standard Cylindrical Tank', capacity: '2,000L', dimensions: '130cm x 165cm', price: 'KSh 13,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-5000', name: 'Standard Cylindrical Tank', capacity: '5,000L', dimensions: '185cm x 205cm', price: 'KSh 29,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'loft-500', name: 'Rectangular Loft Tank', capacity: '500L', dimensions: '142cm x 100cm x 41cm', price: 'KSh 10,800', image: '/Rectangular loft tank.jpeg', inStock: true, deliveryAvailable: true, category: 'Loft' },
+    { id: 'cyl-3000', name: 'Standard Cylindrical Tank', capacity: '3,000L', dimensions: '153cm x 183cm', price: 'KSh 17,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'loft-1000', name: 'Rectangular Loft Tank', capacity: '1,000L', dimensions: '175cm x 125cm x 60cm', price: 'KSh 15,300', image: '/Rectangular loft tank.jpeg', inStock: true, deliveryAvailable: true, category: 'Loft' },
+    { id: 'cyl-10000', name: 'Standard Cylindrical Tank', capacity: '10,000L', dimensions: '226cm x 243cm', price: 'KSh 59,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'ind-underground-2000', name: 'Underground Spherical Tank', capacity: '2,000L', dimensions: '180cm x 190cm', price: 'KSh 49,680', image: '/Underground spherical.jpeg', inStock: true, deliveryAvailable: true, category: 'Industrial' },
+  ];
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
         {/* Cinematic Background */}
-        <div className="absolute inset-0 bg-[url('/All tanks.jpeg')] bg-cover bg-center opacity-15" />
+        <div className="absolute inset-0">
+          <Image
+            src="/All tanks.jpeg"
+            alt="Water Storage Tanks"
+            fill
+            className="object-cover opacity-20"
+            priority
+            sizes="100vw"
+          />
+        </div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-blue-900/80 to-slate-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-blue-900/75 to-slate-900/80" />
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -138,7 +165,7 @@ export default function Home() {
                 transition={{ delay: 0.6, duration: 0.9 }}
                 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent"
               >
-                Premium Water Storage Solutions Built for Kenya
+                Premium Water Storage Tanks Across Kenya
               </motion.h1>
 
               <motion.p
@@ -147,7 +174,7 @@ export default function Home() {
                 transition={{ delay: 0.8, duration: 0.9 }}
                 className="text-2xl md:text-3xl text-blue-100 mb-12 leading-relaxed font-light"
               >
-                Advanced rotationally molded tanks engineered for durability, hygiene, and long-term performance.
+                Food Grade • UV Stabilized • Durable • Nationwide Delivery
               </motion.p>
 
               <motion.div
@@ -160,7 +187,7 @@ export default function Home() {
                   href="/products"
                   className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-12 py-5 rounded-2xl font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 text-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 text-lg"
                 >
-                  Explore Products
+                  Shop Tanks
                 </Link>
                 <a
                   href={whatsappUrl}
@@ -168,7 +195,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-12 py-5 rounded-2xl font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 text-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 text-lg"
                 >
-                  Order Now
+                  WhatsApp Us
                 </a>
               </motion.div>
 
@@ -180,10 +207,10 @@ export default function Home() {
                 className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
               >
                 {[
-                  { label: 'Years Experience', value: '25+' },
-                  { label: 'Happy Customers', value: '10K+' },
-                  { label: 'Tanks Sold', value: '50K+' },
-                  { label: 'Warranty', value: '5 Years' },
+                  { label: 'Tanks Delivered', value: '10,000+' },
+                  { label: 'Genuine Products', value: '100%' },
+                  { label: 'Nationwide Delivery', value: '47 Counties' },
+                  { label: 'Warranty Included', value: '5 Years' },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -279,6 +306,110 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
+
+      {/* Featured Products Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Featured Products
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our most popular water storage solutions trusted by thousands of customers
+            </p>
+          </motion.div>
+
+          {/* First Row - 4 Products */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {featuredProducts.slice(0, 4).map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.8 }}
+              >
+                <ProductCard
+                  id={product.id}
+                  name={product.name}
+                  capacity={product.capacity}
+                  dimensions={product.dimensions}
+                  price={product.price}
+                  image={product.image}
+                  inStock={product.inStock}
+                  deliveryAvailable={product.deliveryAvailable}
+                  category={product.category}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Second Row - 4 Products */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.slice(4, 8).map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.8 }}
+              >
+                <ProductCard
+                  id={product.id}
+                  name={product.name}
+                  capacity={product.capacity}
+                  dimensions={product.dimensions}
+                  price={product.price}
+                  image={product.image}
+                  inStock={product.inStock}
+                  deliveryAvailable={product.deliveryAvailable}
+                  category={product.category}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* View All Products CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-center mt-12"
+          >
+            <Link
+              href="/products"
+              className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-10 py-4 rounded-2xl font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg"
+            >
+              View All Products
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
+
+      {/* Quote Request Section */}
+      <QuoteRequest />
+
+      {/* Customer Reviews Section */}
+      <CustomerReviews />
+
+      {/* Delivery Coverage Section */}
+      <DeliveryCoverage />
+
+      {/* FAQ Section */}
+      <FAQ />
+
+      {/* Gallery Section */}
+      <Gallery />
 
       {/* Features Section */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50">

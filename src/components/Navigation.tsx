@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import CartIcon from './CartIcon';
 
@@ -24,10 +25,13 @@ export default function Navigation() {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
-              <img
+              <Image
                 src="/WhatsApp Image 2026-05-22 at 8.33.20 PM.jpeg"
                 alt="TopTank Kenya Logo"
+                width={56}
+                height={56}
                 className="w-14 h-14 object-contain"
+                priority
               />
               <div>
                 <span className="text-2xl font-bold text-gray-900">TopTank</span>

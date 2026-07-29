@@ -6,17 +6,22 @@ import ProductCard from '@/components/ProductCard';
 
 export default function Products() {
   const [activeTab, setActiveTab] = useState('cylindrical');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [priceFilter, setPriceFilter] = useState('all');
+  const [capacityFilter, setCapacityFilter] = useState('all');
 
   const cylindricalTanks = [
-    { id: 'cyl-100', name: 'Standard Cylindrical Tank', capacity: '100L', dimensions: '51cm x 64cm', price: 'KSh 2,610', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-1000', name: 'Standard Cylindrical Tank', capacity: '1,000L', dimensions: '101cm x 130cm', price: 'KSh 9,540', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-1500', name: 'Standard Cylindrical Tank', capacity: '1,500L', dimensions: '118cm x 150cm', price: 'KSh 13,410', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-2000', name: 'Standard Cylindrical Tank', capacity: '2,000L', dimensions: '130cm x 165cm', price: 'KSh 17,550', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-3000', name: 'Standard Cylindrical Tank', capacity: '3,000L', dimensions: '153cm x 183cm', price: 'KSh 24,000', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-5000', name: 'Standard Cylindrical Tank', capacity: '5,000L', dimensions: '185cm x 205cm', price: 'KSh 45,000', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-10000', name: 'Standard Cylindrical Tank', capacity: '10,000L', dimensions: '226cm x 243cm', price: 'KSh 96,750', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-15000', name: 'Standard Cylindrical Tank', capacity: '15,000L', dimensions: '275cm x 295cm', price: 'KSh 207,000', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
-    { id: 'cyl-24000', name: 'Standard Cylindrical Tank', capacity: '24,000L', dimensions: '300cm x 350cm', price: 'KSh 424,350', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-1000', name: 'Standard Cylindrical Tank', capacity: '1,000L', dimensions: '101cm x 130cm', price: 'KSh 8,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-2000', name: 'Standard Cylindrical Tank', capacity: '2,000L', dimensions: '130cm x 165cm', price: 'KSh 13,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-3000', name: 'Standard Cylindrical Tank', capacity: '3,000L', dimensions: '153cm x 183cm', price: 'KSh 17,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-4000', name: 'Standard Cylindrical Tank', capacity: '4,000L', dimensions: '168cm x 195cm', price: 'KSh 22,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-5000', name: 'Standard Cylindrical Tank', capacity: '5,000L', dimensions: '185cm x 205cm', price: 'KSh 29,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-6000', name: 'Standard Cylindrical Tank', capacity: '6,000L', dimensions: '198cm x 218cm', price: 'KSh 33,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-8000', name: 'Standard Cylindrical Tank', capacity: '8,000L', dimensions: '215cm x 235cm', price: 'KSh 42,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-10000', name: 'Standard Cylindrical Tank', capacity: '10,000L', dimensions: '226cm x 243cm', price: 'KSh 59,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-16000', name: 'Standard Cylindrical Tank', capacity: '16,000L', dimensions: '265cm x 285cm', price: 'KSh 96,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-20000', name: 'Standard Cylindrical Tank', capacity: '20,000L', dimensions: '295cm x 315cm', price: 'KSh 126,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
+    { id: 'cyl-24000', name: 'Standard Cylindrical Tank', capacity: '24,000L', dimensions: '320cm x 340cm', price: 'KSh 148,500', image: '/All tanks.jpeg', inStock: true, deliveryAvailable: true, category: 'Cylindrical' },
   ];
 
   const loftTanks = [
@@ -44,6 +49,34 @@ export default function Products() {
 
   const whatsappNumber = '254736317583';
 
+  // Filter function
+  const filterProducts = (products: any[]) => {
+    return products.filter((product) => {
+      const matchesSearch = 
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.capacity.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const priceNum = parseInt(product.price.replace(/[^0-9]/g, ''));
+      const matchesPrice = 
+        priceFilter === 'all' ||
+        (priceFilter === 'under-10000' && priceNum < 10000) ||
+        (priceFilter === '10000-50000' && priceNum >= 10000 && priceNum <= 50000) ||
+        (priceFilter === '50000-100000' && priceNum > 50000 && priceNum <= 100000) ||
+        (priceFilter === 'over-100000' && priceNum > 100000);
+      
+      const capacityNum = parseInt(product.capacity.replace(/[^0-9]/g, ''));
+      const matchesCapacity = 
+        capacityFilter === 'all' ||
+        (capacityFilter === 'under-1000' && capacityNum < 1000) ||
+        (capacityFilter === '1000-5000' && capacityNum >= 1000 && capacityNum <= 5000) ||
+        (capacityFilter === '5000-10000' && capacityNum > 5000 && capacityNum <= 10000) ||
+        (capacityFilter === 'over-10000' && capacityNum > 10000);
+      
+      return matchesSearch && matchesPrice && matchesCapacity;
+    });
+  };
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -60,6 +93,59 @@ export default function Products() {
               Premium water storage and industrial solutions for every need
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Search and Filters */}
+      <section className="py-8 bg-white border-b sticky top-20 z-30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-4">
+            {/* Search Bar */}
+            <div className="md:col-span-1">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                />
+                <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Price Filter */}
+            <div>
+              <select
+                value={priceFilter}
+                onChange={(e) => setPriceFilter(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              >
+                <option value="all">All Prices</option>
+                <option value="under-10000">Under KSh 10,000</option>
+                <option value="10000-50000">KSh 10,000 - 50,000</option>
+                <option value="50000-100000">KSh 50,000 - 100,000</option>
+                <option value="over-100000">Over KSh 100,000</option>
+              </select>
+            </div>
+
+            {/* Capacity Filter */}
+            <div>
+              <select
+                value={capacityFilter}
+                onChange={(e) => setCapacityFilter(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              >
+                <option value="all">All Capacities</option>
+                <option value="under-1000">Under 1,000L</option>
+                <option value="1000-5000">1,000L - 5,000L</option>
+                <option value="5000-10000">5,000L - 10,000L</option>
+                <option value="over-10000">Over 10,000L</option>
+              </select>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -159,7 +245,7 @@ export default function Products() {
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {cylindricalTanks.map((tank) => (
+              {filterProducts(cylindricalTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
                   id={tank.id}
@@ -174,6 +260,11 @@ export default function Products() {
                 />
               ))}
             </div>
+            {filterProducts(cylindricalTanks).length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500 text-lg">No products match your filters</p>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -195,7 +286,7 @@ export default function Products() {
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {loftTanks.map((tank) => (
+              {filterProducts(loftTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
                   id={tank.id}
@@ -210,6 +301,11 @@ export default function Products() {
                 />
               ))}
             </div>
+            {filterProducts(loftTanks).length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500 text-lg">No products match your filters</p>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -231,7 +327,7 @@ export default function Products() {
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {industrialTanks.map((tank) => (
+              {filterProducts(industrialTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
                   id={tank.id}
@@ -246,6 +342,11 @@ export default function Products() {
                 />
               ))}
             </div>
+            {filterProducts(industrialTanks).length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500 text-lg">No products match your filters</p>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -267,7 +368,7 @@ export default function Products() {
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {industrialBins.map((bin) => (
+              {filterProducts(industrialBins).map((bin) => (
                 <ProductCard
                   key={bin.id}
                   id={bin.id}
@@ -282,6 +383,11 @@ export default function Products() {
                 />
               ))}
             </div>
+            {filterProducts(industrialBins).length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500 text-lg">No products match your filters</p>
+              </div>
+            )}
           </div>
         </section>
       )}
