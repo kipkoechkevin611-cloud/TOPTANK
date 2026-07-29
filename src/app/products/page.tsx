@@ -244,7 +244,7 @@ export default function Products() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {filterProducts(cylindricalTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
@@ -285,7 +285,7 @@ export default function Products() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {filterProducts(loftTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
@@ -326,7 +326,7 @@ export default function Products() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {filterProducts(industrialTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
@@ -367,7 +367,7 @@ export default function Products() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {filterProducts(industrialBins).map((bin) => (
                 <ProductCard
                   key={bin.id}

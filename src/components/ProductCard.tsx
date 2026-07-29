@@ -66,70 +66,52 @@ export default function ProductCard({
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        whileHover={{ y: -12, scale: 1.03 }}
-        className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-3xl transition-all duration-500 group border border-gray-100"
+        whileHover={{ y: -8, scale: 1.02 }}
+        className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-200 h-full flex flex-col"
       >
         {/* Product Image */}
-        <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+        <div className="relative h-[280px] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden flex-shrink-0">
           <Image
             src={image}
             alt={name}
             width={400}
-            height={300}
-            className="w-full h-full object-contain p-10 group-hover:scale-110 transition-transform duration-700"
+            height={280}
+            className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
 
           {/* Badges */}
-          <div className="absolute top-4 left-4 flex flex-col gap-2">
+          <div className="absolute top-3 left-3 flex flex-col gap-2">
             {!inStock && (
-              <span className="bg-red-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+              <span className="bg-red-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">
                 Out of Stock
               </span>
             )}
             {deliveryAvailable && (
-              <span className="bg-green-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+              <span className="bg-green-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md">
                 Free Delivery
               </span>
             )}
-            <span className="bg-blue-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Warranty
-            </span>
-            <span className="bg-cyan-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Food Grade
-            </span>
-            <span className="bg-purple-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-              </svg>
-              UV Resistant
-            </span>
           </div>
 
           {/* Quick View & Wishlist Buttons */}
-          <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button
               onClick={() => setShowQuickView(true)}
-              className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white transition-colors"
+              className="bg-white/95 backdrop-blur-sm p-2.5 rounded-full shadow-md hover:bg-white transition-colors"
               title="Quick View"
             >
-              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
             </button>
             <button
               onClick={handleToggleWishlist}
-              className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white transition-colors"
+              className="bg-white/95 backdrop-blur-sm p-2.5 rounded-full shadow-md hover:bg-white transition-colors"
               title={isInWishlist(id) ? 'Remove from Wishlist' : 'Add to Wishlist'}
             >
-              <svg className={`w-5 h-5 ${isInWishlist(id) ? 'text-red-500' : 'text-gray-700'}`} fill={isInWishlist(id) ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-4 h-4 ${isInWishlist(id) ? 'text-red-500' : 'text-gray-700'}`} fill={isInWishlist(id) ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </button>
@@ -137,44 +119,39 @@ export default function ProductCard({
         </div>
 
         {/* Product Info */}
-        <div className="p-6">
-          <div className="flex items-start justify-between mb-3">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
-                {name}
-              </h3>
-              <p className="text-sm text-gray-500">{category}</p>
-            </div>
-            <span className="bg-blue-100 text-black px-3 py-1 rounded-full text-sm font-semibold">
+        <div className="p-5 flex flex-col flex-grow">
+          <div className="mb-3">
+            <h3 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
+              {name}
+            </h3>
+            <p className="text-xs text-gray-500">{category}</p>
+          </div>
+
+          <div className="flex items-center gap-2 mb-3">
+            <span className="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full text-xs font-semibold">
               {capacity}
             </span>
+            <span className="text-xs text-gray-500">{dimensions}</span>
           </div>
 
-          <div className="flex items-center gap-2 mb-4 text-sm text-gray-600">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-            </svg>
-            {dimensions}
-          </div>
-
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-xl font-bold text-gray-900">{price}</span>
+          <div className="flex items-center justify-between mb-4 mt-auto">
+            <span className="text-2xl font-bold text-gray-900">{price}</span>
             {inStock && (
-              <span className="text-green-600 text-sm font-semibold">In Stock</span>
+              <span className="text-green-600 text-xs font-semibold">In Stock</span>
             )}
           </div>
 
           <button
             onClick={handleAddToCart}
             disabled={!inStock}
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+            className="w-full bg-blue-600 text-white py-3.5 px-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none text-sm"
             aria-label={inStock ? `Add ${name} to cart` : 'Product out of stock'}
           >
             {inStock ? 'Add to Cart' : 'Out of Stock'}
           </button>
           <Link
             href={`/products/${id}`}
-            className="block w-full text-center bg-gray-100 text-gray-700 py-3 px-4 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 mt-3 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none"
+            className="block w-full text-center bg-gray-100 text-gray-700 py-3 px-4 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 mt-3 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none text-sm"
             aria-label={`View details for ${name}`}
           >
             View Details

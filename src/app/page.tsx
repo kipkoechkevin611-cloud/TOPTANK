@@ -341,7 +341,7 @@ export default function Home() {
           </motion.div>
 
           {/* First Row - 4 Products */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {featuredProducts.slice(0, 4).map((product, index) => (
               <motion.div
                 key={product.id}
