@@ -21,9 +21,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     dimensions: 'Diameter: 1.85m, Height: 2.1m',
     price: 'KSh 24,500',
     images: [
-      '/assets/products/tank-1.jpg',
-      '/assets/products/tank-2.jpg',
-      '/assets/products/tank-3.jpg',
+      '/All tanks.jpeg',
+      '/All tanks.jpeg',
+      '/All tanks.jpeg',
     ],
     inStock: true,
     deliveryAvailable: true,

@@ -85,7 +85,7 @@ export default function QuoteRequest() {
                 </div>
                 <div>
                   <p className="font-semibold">Call Us</p>
-                  <p className="text-blue-100">0736 317 583</p>
+                  <p className="text-blue-100">0739 447 779</p>
                 </div>
               </div>
               
@@ -97,7 +97,7 @@ export default function QuoteRequest() {
                 </div>
                 <div>
                   <p className="font-semibold">WhatsApp</p>
-                  <p className="text-blue-100">0736 317 583</p>
+                  <p className="text-blue-100">0739 447 779</p>
                 </div>
               </div>
 
@@ -133,7 +133,7 @@ export default function QuoteRequest() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black bg-white"
                     placeholder="Your full name"
                   />
                 </div>
@@ -147,7 +147,7 @@ export default function QuoteRequest() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black bg-white"
                       placeholder="07XX XXX XXX"
                     />
                   </div>
@@ -158,7 +158,7 @@ export default function QuoteRequest() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black bg-white"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -173,7 +173,7 @@ export default function QuoteRequest() {
                       value={formData.county}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black bg-white"
                       placeholder="Your county"
                     />
                   </div>
@@ -183,7 +183,7 @@ export default function QuoteRequest() {
                       name="tankCapacity"
                       value={formData.tankCapacity}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black bg-white"
                     >
                       <option value="">Select capacity</option>
                       <option value="100L">100L</option>
@@ -208,7 +208,7 @@ export default function QuoteRequest() {
                     value={formData.quantity}
                     onChange={handleChange}
                     min="1"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent text-black bg-white"
                   />
                 </div>
 
@@ -219,7 +219,7 @@ export default function QuoteRequest() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none text-black bg-white"
                     placeholder="Any specific requirements or questions..."
                   />
                 </div>

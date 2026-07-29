@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import CartSidebar from "@/components/CartSidebar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import { CartProvider } from "@/contexts/CartContext";
@@ -71,7 +70,6 @@ export default function RootLayout({
               <Navigation />
               <main className="flex-grow">{children}</main>
               <Footer />
-              <WhatsAppButton />
               <CartSidebar />
               <MobileBottomNav />
             </ToastProvider>

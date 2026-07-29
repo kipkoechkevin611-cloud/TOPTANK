@@ -238,13 +238,13 @@ export default function Products() {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Standard Cylindrical Storage Tanks</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Standard Cylindrical Storage Tanks</h2>
               <p className="text-gray-600 mb-6">
                 Flagship vertical storage tanks designed for ground-level or raised platform installations
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filterProducts(cylindricalTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
@@ -279,13 +279,13 @@ export default function Products() {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Rectangular Loft Tanks</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Rectangular Loft Tanks</h2>
               <p className="text-gray-600 mb-6">
                 Space-saving tanks engineered for indoor spaces such as ceiling lofts, attics, under-stair storage, and balconies
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filterProducts(loftTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
@@ -320,13 +320,13 @@ export default function Products() {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Specialized Industrial & Underground Tanks</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Specialized Industrial & Underground Tanks</h2>
               <p className="text-gray-600 mb-6">
                 Heavy-duty tanks for industrial, agricultural, and underground applications
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filterProducts(industrialTanks).map((tank) => (
                 <ProductCard
                   key={tank.id}
@@ -361,13 +361,13 @@ export default function Products() {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Industrial Bins & Waste Management</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Industrial Bins & Waste Management</h2>
               <p className="text-gray-600 mb-6">
                 Heavy-duty waste management solutions for commercial, industrial, and residential applications
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filterProducts(industrialBins).map((bin) => (
                 <ProductCard
                   key={bin.id}
