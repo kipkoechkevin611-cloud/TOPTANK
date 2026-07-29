@@ -150,9 +150,9 @@ export default function Products() {
       </section>
 
       {/* Category Banners */}
-      <section className="py-12 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
             {[
               {
                 id: 'cylindrical',
@@ -183,7 +183,9 @@ export default function Products() {
                 key={category.id}
                 whileHover={{ scale: 1.05 }}
                 onClick={() => setActiveTab(category.id)}
-                className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg"
+                className={`relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg flex-shrink-0 w-48 ${
+                  activeTab === category.id ? 'ring-2 ring-blue-600' : ''
+                }`}
               >
                 <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
                   <img
@@ -192,10 +194,12 @@ export default function Products() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{category.name}</h3>
-                  <p className="text-white/80 text-sm">{category.description}</p>
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent ${
+                  activeTab === category.id ? 'from-blue-600/80 via-blue-400/40' : ''
+                }`} />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-sm font-bold text-white mb-1 whitespace-nowrap">{category.name}</h3>
+                  <p className="text-white/80 text-xs whitespace-nowrap">{category.description}</p>
                 </div>
               </motion.div>
             ))}

@@ -15,7 +15,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappNumber = '254736317583';
+    const whatsappNumber = '254739447779';
     const message = encodeURIComponent(
       `CONTACT INQUIRY\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
     );
@@ -58,9 +58,9 @@ export default function Contact() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone / WhatsApp</h3>
-              <p className="text-gray-600 mb-4">0736317583</p>
+              <p className="text-gray-600 mb-4">0739447779</p>
               <a
-                href="https://wa.me/254736317583"
+                href="https://wa.me/254739447779"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 text-sm"
@@ -285,11 +285,11 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">WhatsApp</h3>
               <p className="text-gray-600 mb-4">Instant messaging support</p>
-              <span className="text-blue-600 font-semibold">0736317583</span>
+              <span className="text-blue-600 font-semibold">0739447779</span>
             </motion.a>
 
             <motion.a
-              href="tel:0736317583"
+              href="tel:0739447779"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -303,7 +303,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
               <p className="text-gray-600 mb-4">Direct phone support</p>
-              <span className="text-blue-600 font-semibold">0736317583</span>
+              <span className="text-blue-600 font-semibold">0739447779</span>
             </motion.a>
 
             <motion.a
@@ -473,7 +473,7 @@ export default function Contact() {
           >
             <div className="mb-6">
               <p className="text-3xl font-bold text-gray-900 mb-2">Call / WhatsApp</p>
-              <p className="text-4xl font-bold text-blue-600">0736 317 583</p>
+              <p className="text-4xl font-bold text-blue-600">0739 447 779</p>
             </div>
             <div className="mb-6">
               <p className="text-lg text-gray-700 mb-2">Headquarters</p>
@@ -484,7 +484,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/254736317583"
+                href="https://wa.me/254739447779"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2"
