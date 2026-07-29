@@ -15,7 +15,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
   return (
     <div className="space-y-4">
       {/* Main Image */}
-      <div className="relative aspect-square bg-white rounded-2xl overflow-hidden shadow-lg">
+      <div className="relative aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto">
         <AnimatePresence mode="wait">
           <motion.img
             key={selectedImage}

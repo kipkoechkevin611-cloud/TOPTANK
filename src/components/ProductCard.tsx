@@ -145,7 +145,7 @@ export default function ProductCard({
               </h3>
               <p className="text-sm text-gray-500">{category}</p>
             </div>
-            <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
+            <span className="bg-blue-100 text-black px-3 py-1 rounded-full text-sm font-semibold">
               {capacity}
             </span>
           </div>
